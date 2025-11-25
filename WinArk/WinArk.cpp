@@ -170,7 +170,7 @@ int Run(LPTSTR lpstrCmdLine = nullptr, int nCmdShow = SW_SHOWDEFAULT) {
 		
 	// CreateEx will load IDR_MAINFRAME
 	_hMainWnd = wndMain.CreateEx(NULL);
-	SetWindowDisplayAffinity(_hMainWnd, WDA_MONITOR);
+	// SetWindowDisplayAffinity(_hMainWnd, WDA_MONITOR);
 	if (_hMainWnd == NULL) {
 		ATLTRACE(_T("Main dialog creation failed!\n"));
 		return 0;
