@@ -7,6 +7,7 @@ LRESULT CConfigServerDbg::OnInitDialog(UINT uMsg, WPARAM wParam,
 	m_Check1.Attach(GetDlgItem(IDC_SZDYG));
 	m_Check2.Attach(GetDlgItem(IDC_MICROSOFT));
 	m_Edit.Attach(GetDlgItem(IDC_SERVER_URL));
+	m_Check1.SetCheck(BST_CHECKED);
 	return TRUE;
 }
 

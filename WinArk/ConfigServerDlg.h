@@ -21,5 +21,5 @@ public:
 private:
 	CButton m_Check1, m_Check2, m_Check3;
 	CEdit m_Edit;
-	std::string m_Server;
+	std::string m_Server = "https://msdl.microsoft.com/download/symbols";
 };
