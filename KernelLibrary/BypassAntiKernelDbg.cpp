@@ -62,6 +62,6 @@ NTSTATUS BypassAntiKernelDbg::Unbypass() {
 	status = DetourTransactionCommit();
 	if (!NT_SUCCESS(status))
 		return status;
-
+	
 	return STATUS_SUCCESS;
 }

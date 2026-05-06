@@ -123,6 +123,9 @@ int Run(LPTSTR lpstrCmdLine = nullptr, int nCmdShow = SW_SHOWDEFAULT) {
 	CMessageLoop theLoop;
 	_Module.AddMessageLoop(&theLoop);
 
+	// Delay any UI work until ATL/COM and the app module are initialized.
+	g_SymbolHelper.ConfigureServer();
+
 	HANDLE hThread = ::CreateThread(nullptr, 0, [](auto param)->DWORD {
 		std::string name = Helpers::GetNtosFileName();
 		std::wstring osFileName = Helpers::StringToWstring(name);

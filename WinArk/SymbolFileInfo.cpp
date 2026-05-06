@@ -139,12 +139,21 @@ downslib_error SymbolFileInfo::Download(std::string url, std::wstring fileName, 
 }
 
 SymbolFileInfo::SymbolFileInfo() {
-	std::string url = "https://msdl.microsoft.com/download/symbols";
+}
+
+bool SymbolFileInfo::ConfigureServer(HWND hWndParent) {
 	CConfigServerDbg dlg;
-	if (dlg.DoModal() == IDOK) {
-		url = dlg.GetServer();
+	if (dlg.DoModal(hWndParent) == IDOK) {
+		SetServer(dlg.GetServer());
+		return true;
 	}
-	_server = url;
+	return false;
+}
+
+void SymbolFileInfo::SetServer(std::string server) {
+	if (!server.empty()) {
+		_server = std::move(server);
+	}
 }
 
 SymbolFileInfo::~SymbolFileInfo() {

@@ -42,6 +42,8 @@ public:
 struct SymbolFileInfo {
 	SymbolFileInfo();
 	~SymbolFileInfo();
+	bool ConfigureServer(HWND hWndParent = nullptr);
+	void SetServer(std::string server);
 	bool SymDownloadSymbol(std::wstring localFile);
 	bool GetPdbSignature(ULONG_PTR imageBase,PIMAGE_DEBUG_DIRECTORY entry);
 	downslib_error Download(std::string url, std::wstring fileName, 
